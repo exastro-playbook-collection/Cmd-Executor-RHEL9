@@ -29,15 +29,19 @@ Ansible Role: RH_cmd_executor/OS_build
 
 ロール利用時に以下の変数値を指定する必要があります。
 
-| Name | Description |
-| ---- | ----------- |
-| `VAR_RH_cmd_executor` | |
-| `- type` | 以下のいずれかのタイプを指定する。<br>command：commandでコマンドを実行。コマンドを安全に使用する場合に最適。<br/>shell：shellでコマンドを実行。シェルを使用し、環境変数、パイプ・リダイレクト等使用可能で高い利便性。<br/>upload：ファイルをアップロードして指定のパスに配置する。 |
-| &nbsp;&nbsp;&nbsp;&nbsp;`cmd` | 実行したいコマンドを指定する。<br>typeがcommandとshellの場合に有効。<br>例：export PATH=$PATH:/usr/local/custom/bin |
-| &nbsp;&nbsp;&nbsp;&nbsp;`chdir` | 移動先のディレクトリパスを指定する。<br>typeがcommandとshellの場合に有効。<br>指定したディレクトリに移動してからcmdに指定したコマンドが実行される。<br/>例：somedir/ |
-| &nbsp;&nbsp;&nbsp;&nbsp;`executable` | コマンドを実行するときに使われるシェルを指定する。<br>typeがshellの場合に有効。<br/>例：/bin/sh |
-| &nbsp;&nbsp;&nbsp;&nbsp;`path` | アップロードするファイルの配置先パスを指定する。<br>typeがuploadの場合に有効。<br>例：/etc/foo.conf |
-| &nbsp;&nbsp;&nbsp;&nbsp;`file` | アップロードするファイルを登録する。<br>typeがuploadの場合に有効。 |
+「値変更可能列」について
+◎：キーのため変更不可の変数（更新、削除の場合）
+〇：値が変更できる変数
+
+| Name | 値変更可能 | Description |
+| ---- | ----------- | ----------- |
+| `VAR_RH_cmd_executor` | | |
+| `- type` | 〇 | 以下のいずれかのタイプを指定する。<br>command：commandでコマンドを実行。コマンドを安全に使用する場合に最適。<br/>shell：shellでコマンドを実行。シェルを使用し、環境変数、パイプ・リダイレクト等使用可能で高い利便性。<br/>upload：ファイルをアップロードして指定のパスに配置する。 |
+| &nbsp;&nbsp;&nbsp;&nbsp;`cmd` | 〇 | 実行したいコマンドを指定する。<br>typeがcommandとshellの場合に有効。<br>例：export PATH=$PATH:/usr/local/custom/bin |
+| &nbsp;&nbsp;&nbsp;&nbsp;`chdir` | 〇 | 移動先のディレクトリパスを指定する。<br>typeがcommandとshellの場合に有効。<br>指定したディレクトリに移動してからcmdに指定したコマンドが実行される。<br/>例：somedir/ |
+| &nbsp;&nbsp;&nbsp;&nbsp;`executable` | 〇 | コマンドを実行するときに使われるシェルを指定する。<br>typeがshellの場合に有効。<br/>例：/bin/sh |
+| &nbsp;&nbsp;&nbsp;&nbsp;`path` | 〇 | アップロードするファイルの配置先パスを指定する。<br>typeがuploadの場合に有効。<br>例：/etc/foo.conf |
+| &nbsp;&nbsp;&nbsp;&nbsp;`file` | 〇 | アップロードするファイルを登録する。<br>typeがuploadの場合に有効。 |
 
 ### Example
 ~~~
