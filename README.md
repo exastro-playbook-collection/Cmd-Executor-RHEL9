@@ -1,4 +1,4 @@
-OS-RHEL9
+Cmd-Executor-RHEL9
 ===============================
 # Trademarks
 -----------
