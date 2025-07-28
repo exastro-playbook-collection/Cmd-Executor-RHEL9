@@ -50,7 +50,7 @@ RHELサーバは、OSのインストール後、以下の設定を実施して�
 
 | 情報設定ロールのマニュアル |
 | ------- |
-| [RH_chrony/OS_build マニュアル](RH_chrony/OS_build/README.md) |
+| [RH_cmd_executor/OS_build マニュアル](RH_cmd_executor/OS_build/README.md) |
 
 # Remarks
 -------
