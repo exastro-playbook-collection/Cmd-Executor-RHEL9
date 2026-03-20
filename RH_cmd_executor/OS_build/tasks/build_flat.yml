@@ -1,25 +1,25 @@
 ---
-- name: ansible.builtin.command. ({{ parameter.cmd }})
+- name: Ansible.builtin.command. ({{ parameter.cmd }})
   ansible.builtin.command:
     cmd: "{{ parameter.cmd }}"
     chdir: "{{ parameter.chdir if parameter.chdir is defined and parameter.chdir is not none else omit }}"
   when:
-  - parameter.type is defined
-  - parameter.type == 'command'
+    - parameter.type is defined
+    - parameter.type == 'command'
 
-- name: ansible.builtin.shell. ({{ parameter.cmd }})
+- name: Ansible.builtin.shell. ({{ parameter.cmd }})
   ansible.builtin.shell:
     cmd: "{{ parameter.cmd }}"
     chdir: "{{ parameter.chdir if parameter.chdir is defined and parameter.chdir is not none else omit }}"
     executable: "{{ parameter.executable if parameter.executable is defined and parameter.executable is not none else omit }}"
   when:
-  - parameter.type is defined
-  - parameter.type == 'shell'
+    - parameter.type is defined
+    - parameter.type == 'shell'
 
-- name: file upload. ({{ parameter.path }})
+- name: File upload. ({{ parameter.path }})
   ansible.builtin.copy:
     src: "{{ parameter.file }}"
     dest: "{{ parameter.path }}"
   when:
-  - parameter.type is defined
-  - parameter.type == 'upload'
+    - parameter.type is defined
+    - parameter.type == 'file'
